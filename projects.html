@@ -9,19 +9,25 @@
   <link rel="stylesheet" href="assets/css/projects.css" />
 </head>
 <body>
-  <!-- ====== Header ====== -->
+  <!-- ===== Header ===== -->
   <header>
-    <nav>
-      <div class="logo">Ayush<span> Kumar</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skill.html">Skills</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <div class="logo">Ayush<span> Kumar</span></div>
+
+    <!-- Hamburger Menu Button -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- ====== Projects Section ====== -->
   <section class="projects-section">
@@ -147,6 +153,30 @@
     </div>
   </footer>
 
+  <!-- Main JS -->
+  <script>
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when a link is clicked (optional)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+          menuToggle.querySelector('i').classList.add('fa-bars');
+          menuToggle.querySelector('i').classList.remove('fa-times');
+        }
+      });
+    });
+  </script>
   <script src="assets/js/projects.js"></script>
 </body>
 </html>

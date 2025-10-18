@@ -17,7 +17,13 @@
   <header>
     <nav>
       <div class="logo">Ayush<span> Kumar</span></div>
-      <ul class="nav-links">
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skill.html">Skills</a></li>
@@ -40,14 +46,14 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer-container">
-
+      
       <!-- About -->
       <div class="footer-about">
         <img src="assets/img/logo.png" alt="Ayush Logo" class="footer-logo">
-        <p>Crafting intelligent, future-ready web and mobile solutions that empower users and brands to thrive in the digital era.</p>
+        <p>Building intelligent, future-ready digital solutions that empower brands and enhance user experiences across the web and mobile.</p>
       </div>
 
-      <!-- Links -->
+      <!-- Quick Links -->
       <div class="footer-links">
         <h3>Company</h3>
         <ul>
@@ -58,7 +64,7 @@
         </ul>
       </div>
 
-      <!-- Contact -->
+      <!-- Contact Info -->
       <div class="footer-contact">
         <h3>Contact Info</h3>
         <p><i class="fas fa-map-marker-alt"></i> Patna, Bihar, India 801102</p>
@@ -66,7 +72,7 @@
         <p><i class="fas fa-phone"></i> <a href="tel:+919771041624">+91 97710 41624</a></p>
       </div>
 
-      <!-- Social -->
+      <!-- Social Media -->
       <div class="footer-social">
         <h3>Follow Me</h3>
         <div class="social-links">
@@ -77,6 +83,7 @@
           <a href="https://www.snapchat.com/add/ayush_k235915?" target="_blank"><i class="fab fa-snapchat"></i></a>
         </div>
       </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -85,6 +92,29 @@
   </footer>
 
   <!-- Main JS -->
+  <script>
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when a link is clicked (optional)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+          menuToggle.querySelector('i').classList.add('fa-bars');
+          menuToggle.querySelector('i').classList.remove('fa-times');
+        }
+      });
+    });
+  </script>
   <script src="assets/js/index.js"></script>
 </body>
 </html>

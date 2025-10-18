@@ -1,3 +1,4 @@
+/* ===== Reset & Global Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+/* ===== Navbar ===== */
 header {
   position: fixed;
   width: 100%;
@@ -21,33 +22,48 @@ header {
   backdrop-filter: blur(10px);
   z-index: 100;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem;
 }
+
 .logo {
   font-size: 1.8rem;
   font-weight: 600;
   color: #38bdf8;
 }
+
 .logo span {
   color: #facc15;
 }
+
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
 }
+
 .nav-links a {
   color: #e2e8f0;
   text-decoration: none;
   transition: 0.3s;
 }
+
 .nav-links a:hover,
 .nav-links .active {
   color: #38bdf8;
+}
+
+/* ===== Hamburger Menu ===== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #38bdf8;
+  cursor: pointer;
+  z-index: 101;
 }
 
 /* Skills Section */
@@ -231,10 +247,32 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Navbar responsive */
 @media (max-width: 768px) {
-  .skills-cards {
-    flex-direction: column;
-    align-items: center;
+  .menu-toggle { 
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    z-index: 1000;
   }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(15,23,42,0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.show { right: 0; }
+  .nav-links a { font-size: 1.2rem; }
 }
+

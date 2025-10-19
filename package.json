@@ -6,6 +6,11 @@
     "build": "echo \"No build step required - static files\"",
     "test": "echo \"No tests specified\" && exit 0"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "Ayush Kumar",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }

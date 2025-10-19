@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Personal portfolio website",
   "scripts": {
-    "build": "echo \"Add your build command here\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"No build step required - static files\"",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "author": "",
   "license": "ISC"

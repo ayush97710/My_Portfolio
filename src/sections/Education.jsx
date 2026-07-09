@@ -87,7 +87,7 @@ const Education = () => {
                     <FaGraduationCap className="text-cyan-neon text-sm" />
                     Secondary School (10th Grade)
                   </h3>
-                  <h4 className="text-lg text-gray-300 font-medium mt-1">Bihar Public School, Paliganj, Patna</h4>
+                  <h4 className="text-lg text-gray-300 font-medium mt-1">Bihar Public School, Lalganj Sehra, Paliganj, Patna</h4>
                 </div>
                 <span className="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/10 text-gray-300 text-sm rounded-full border border-white/5">
                   2022
